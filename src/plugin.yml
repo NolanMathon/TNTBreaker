@@ -1,0 +1,11 @@
+name: TNTBreaker
+version: 1.0.0
+main : fr.hegsis.tntbreaker.Main
+description: Allow to add durability to any block against TNT
+author: HegSiS
+commands:
+  tntbreaker:
+    aliases:
+      - tntb
+      - tb
+    description: Manage TNT breaker

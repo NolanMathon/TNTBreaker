@@ -1,5 +1,6 @@
 package fr.hegsis.tntbreaker;
 
+import fr.hegsis.tntbreaker.commands.TNTBreakerCommand;
 import fr.hegsis.tntbreaker.listeners.TNTBlastListeners;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -24,5 +25,7 @@ public class Main extends JavaPlugin {
 
         PluginManager pm = Bukkit.getPluginManager();
         pm.registerEvents(new TNTBlastListeners(), this);
+
+        getCommand("tntbreaker").setExecutor(new TNTBreakerCommand());
     }
 }
