@@ -2,6 +2,7 @@ package fr.hegsis.tntbreaker;
 
 import fr.hegsis.tntbreaker.commands.TNTBreakerCommand;
 import fr.hegsis.tntbreaker.listeners.TNTBlastListeners;
+import fr.hegsis.tntbreaker.utils.FileUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -27,5 +28,7 @@ public class Main extends JavaPlugin {
         pm.registerEvents(new TNTBlastListeners(), this);
 
         getCommand("tntbreaker").setExecutor(new TNTBreakerCommand());
+
+        maxDurabilityPerItem = FileUtils.getDefaultBlocksMap();
     }
 }

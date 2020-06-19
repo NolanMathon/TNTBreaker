@@ -2,6 +2,7 @@ package fr.hegsis.tntbreaker.commands;
 
 import fr.hegsis.tntbreaker.Main;
 import fr.hegsis.tntbreaker.utils.Calculs;
+import fr.hegsis.tntbreaker.utils.FileUtils;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -51,6 +52,7 @@ public class TNTBreakerCommand implements CommandExecutor {
                 }
 
                 main.maxDurabilityPerItem.remove(it.getType());
+                FileUtils.removeBlockOnConfig(it.getType());
                 p.sendMessage("§eThe block §c" + it.getType().toString() + " §ehas no durability !");
                 return true;
             }
@@ -72,6 +74,7 @@ public class TNTBreakerCommand implements CommandExecutor {
                     }
 
                     main.maxDurabilityPerItem.put(it.getType(), durability);
+                    FileUtils.setBlockOnConfig(it.getType(), durability);
                     p.sendMessage("§eThe block §c" + it.getType().toString() + " §eset with §c" + durability + " §eof durability !");
                     return true;
                 }
@@ -84,6 +87,7 @@ public class TNTBreakerCommand implements CommandExecutor {
                     }
 
                     main.maxDurabilityPerItem.replace(it.getType(), durability);
+                    FileUtils.setBlockOnConfig(it.getType(), durability);
                     p.sendMessage("§eThe block §c" + it.getType().toString() + " §ehas now §c" + durability + " §eof durability !");
                     return true;
                 }

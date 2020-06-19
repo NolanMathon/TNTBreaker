@@ -47,6 +47,7 @@ public class TNTBlastListeners implements Listener {
         if (deadBlocks.size() > 0) {
             for (Block b : deadBlocks) {
                 b.breakNaturally();
+                main.blocksDurability.remove(b.getLocation());
             }
         }
 
