@@ -1,0 +1,13 @@
+#############################################################################
+#                                                                           #
+#                       Plugin created by HegSiS                            #
+#       For all the next message, the color code has been supported (&)     #
+#                          TNTBreaker v1.0.0                                #
+#                                                                           #
+#############################################################################
+
+# List of blocks with custom durability
+# Tips : Use ingame command to add item : /tb add [durability]
+blocks-with-durability:
+  OBSIDIAN: 10
+

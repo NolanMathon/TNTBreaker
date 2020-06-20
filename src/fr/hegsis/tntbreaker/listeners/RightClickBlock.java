@@ -5,6 +5,7 @@ import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
+import org.bukkit.event.block.BlockExplodeEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 
 public class RightClickBlock implements Listener {
@@ -37,6 +38,6 @@ public class RightClickBlock implements Listener {
             durability = main.blocksDurability.get(e.getClickedBlock().getLocation());
         }
 
-        e.getPlayer().sendMessage("§6Durabilité §f: §c" + durability + "§f/§4" + maxDurability);
+        e.getPlayer().sendMessage("§6Durability §f: §c" + durability + "§f/§4" + maxDurability);
     }
 }

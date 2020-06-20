@@ -95,7 +95,7 @@ public class TNTBreakerCommand implements CommandExecutor {
         }
 
         //Si le joueur n'a pas la permission
-        if (p.hasPermission("tntbreaker-help")) {
+        if (!p.hasPermission("tntbreaker-help")) {
             p.sendMessage("§cYou don't have permission to perform that command !");
             return false;
         }

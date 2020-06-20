@@ -1,6 +1,7 @@
 package fr.hegsis.tntbreaker;
 
 import fr.hegsis.tntbreaker.commands.TNTBreakerCommand;
+import fr.hegsis.tntbreaker.listeners.RightClickBlock;
 import fr.hegsis.tntbreaker.listeners.TNTBlastListeners;
 import fr.hegsis.tntbreaker.utils.FileUtils;
 import org.bukkit.Bukkit;
@@ -24,8 +25,11 @@ public class Main extends JavaPlugin {
     public void onEnable() {
         INSTANCE = this;
 
+        saveDefaultConfig();
+
         PluginManager pm = Bukkit.getPluginManager();
         pm.registerEvents(new TNTBlastListeners(), this);
+        pm.registerEvents(new RightClickBlock(), this);
 
         getCommand("tntbreaker").setExecutor(new TNTBreakerCommand());
 
